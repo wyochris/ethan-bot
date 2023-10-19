@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 import discord
 import random
-
+from gabe import RandomCapsCog
 
 load_dotenv()
 discord_token = os.getenv('DISCORD_TOKEN')
@@ -10,10 +10,14 @@ discord_token = os.getenv('DISCORD_TOKEN')
 intents = discord.Intents.default()
 client = discord.Client(intents=discord.Intents.all())
 
+def setup(bot):
+    bot.add_cog(RandomCapsCog(bot))
+
 # set up bot
 @client.event
 async def on_ready():
     print('Logged in as {0.user}'.format(client))
+    setup(client)
     await client.change_presence(activity=discord.Game(name='!ethan help!'))
 
 # bot main loop
