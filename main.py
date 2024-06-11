@@ -25,19 +25,13 @@ async def on_message(message):
         return
         
     if message.content.startswith('!goob'):
-        # Instantiate the cog and pass the client (your bot) to it
         cog = RandomCapsCog(client)
-        # Call the command directly
         await cog.random_goob(message)
     if message.content.startswith('!cabe'):
-        # Instantiate the cog and pass the client (your bot) to it
         cog = RandomCapsCog(client)
-        # Call the command directly
         await cog.random_caps_gabe(message)
     if message.content.startswith('!chup'):
-        # Instantiate the cog and pass the client (your bot) to it
         cog = RandomCapsCog(client)
-        # Call the command directly
         await cog.random_chup(message)
 
  
